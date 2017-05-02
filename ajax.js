@@ -71,4 +71,20 @@ $('#eight').append('FAIL. You dun goofed!');
 });
 });
 
+$('#nine').on('click', function() {
+  $.ajax({
+  url: rootURL + '/a_car',
+  method: 'GET',
+  dataType: 'html'
+}).done(function (responseData) {
+  console.log((responseData));
+  $('#list').append((responseData));
+}).fail(function(responseData) {
+  console.log('FAIL. You dun goofed!');
+$('#nine').append('FAIL. You dun goofed!');
+}).always(function() {
+  console.log('Some stuff happened. Now it is done.')
+});
+});
+
 });
